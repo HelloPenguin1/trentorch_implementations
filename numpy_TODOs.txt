@@ -1,0 +1,20 @@
+Tier 1: Critical (Daily PyTorch / Deep Learning Workflow)
+Bridging to PyTorch/Tensors: Focus on From ndarray to Tensor, Everything Carries Over, and Where Tensors Diverge: Gradient Tracking. Understanding memory sharing and autograd boundaries between NumPy and PyTorch is essential.
+
+Broadcasting: Prioritize The Broadcasting Rule, Precisely, Practical Broadcasting Patterns, and Normalize a Batch Using Broadcasting Only. Broadcasting is fundamental for loss functions, attention masking, and batch operations without looping.
+
+Shape Manipulation: Focus on reshape, newaxis / expand_dims, squeeze, and Combining Arrays. You will use these constantly when aligning image/text tensor batch dimensions (B, C, H, W or B, T, D).
+
+Indexing & Slicing: Prioritize Boolean Masking, Fancy Indexing, and np.where. Essential for masking transformer padding, selecting token indices, and applying threshold filters on predictions.
+
+Tier 2: High Priority (Math, Reductions & Reproducibility)
+Vectorized Operations & ufuncs: Focus on The axis Parameter, Aggregations, and Why Vectorized Operations Are Faster Than a Loop. Multi-axis reductions are core to calculating batch statistics (e.g., LayerNorm, BatchNorm) and metric evaluations.
+
+Linear Algebra Basics: Prioritize Matrix Multiplication with @ / matmul and np.linalg.norm. Matmul forms the backbone of linear projections and attention mechanisms, while norms are crucial for loss computation and gradient clipping.
+
+Random & Sampling: Focus on Seeding and Reproducibility and Normal-Distribution Samples and Weight Initialization. Necessary for deterministic training runs, custom layer weight initialization, and data augmentation pipelines.
+
+Tier 3: Performance & Memory Debugging
+Views vs Copies: Study Which Operations Return a View vs a Copy and Mutating Through a View. Vital for avoiding subtle bugs where input data is modified in-place or unexpected memory allocation slows down pipelines.
+
+Performance & Memory: Focus on Contiguous vs Non-Contiguous Arrays and Strides. Understanding contiguous memory directly transfers to PyTorch performance optimization (e.g., when calling .contiguous() before .view()).
